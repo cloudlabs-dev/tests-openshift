@@ -8,5 +8,5 @@ RUN echo "<?php print $_SERVER[SERVER_ADDR]" > /var/www/html/index.php
 
 EXPOSE 8080
 
-ENTRYPOINT [“/usr/sbin/httpd”]
-CMD [“-D”, “FOREGROUND”]
+CMD /bin/bash -c 'echo Starting Microservice... ; \
+    /usr/sbin/httpd -DFOREGROUND
