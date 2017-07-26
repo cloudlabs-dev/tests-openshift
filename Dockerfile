@@ -4,6 +4,8 @@ MAINTAINER Leonardo Costa <lcosta@cloudlabs.com.br>
 
 RUN dnf install httpd php -y
 
+RUN chmod -R a+rwx /run/httpd /etc/httpd/logs
+
 RUN echo "<?php print $_SERVER[SERVER_ADDR]" > /var/www/html/index.php 
 
 EXPOSE 8080
