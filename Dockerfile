@@ -2,7 +2,7 @@ FROM fedora
 
 MAINTAINER Leonardo Costa <lcosta@cloudlabs.com.br>
 
-RUN dnf install httpd php -y
+RUN dnf install httpd php bind-utils -y
 
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf; \
     sed -i 's/variables_order = "GPCS"/variables_order = "EGPCS"/' /etc/php.ini; \
